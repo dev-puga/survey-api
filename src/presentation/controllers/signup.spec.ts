@@ -11,8 +11,8 @@ describe('SignUp Controller', () => {
       }
     }
     const httResponse = sut.handle(httpRequest)
-    expect(httResponse.statusCode).toBe(400)
-    expect(httResponse.body).toEqual(new MissingParam('name'))
+    expect(httResponse?.statusCode).toBe(400)
+    expect(httResponse?.body).toEqual(new MissingParam('name'))
   })
 
   test('Should return status code 400 if no email is provided', () => {
@@ -25,7 +25,7 @@ describe('SignUp Controller', () => {
       }
     }
     const httResponse = sut.handle(httpRequest)
-    expect(httResponse.statusCode).toBe(400)
-    expect(httResponse.body).toEqual(new MissingParam('email'))
+    expect(httResponse?.statusCode).toBe(400)
+    expect(httResponse?.body).toEqual(new MissingParam('email'))
   })
 })
